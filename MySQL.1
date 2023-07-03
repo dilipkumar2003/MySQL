@@ -1,0 +1,42 @@
+create database win;
+create table win.student(
+s_no int primary key,
+name varchar(20),
+roll_no varchar(20),
+dept varchar(20),
+clg_name varchar(20),
+place varchar(20)
+);
+
+drop database sakila;
+insert into win.student values
+(1,"dilip","14","BME","MEC","rasipuram"),
+(2,"KARTHI","24","BME","MEC","rasipuram"),
+(3,"KUMAR","15","BME","MEC","rasipuram"),
+(4,"JAI","16","BME","MEC","rasipuram"),
+(5,"SARATH","18","BME","MEC","rasipuram"),
+(6,"DIYA","10","BME","MEC","rasipuram"),
+(7,"NAVYA","11","BME","MEC","rasipuram"),
+(8,"KAUYA","12","BME","MEC","rasipuram"),
+(9,"KARUNYA","13","BME","MEC","rasipuram"),
+(10,"dilip","9","BME","MEC","rasipuram");
+select * from win.student;
+describe win.student;
+alter table win.student add v int;
+select avg(roll_no) from win.student;
+select min(roll_no) from win.student;
+select max(roll_no) from win.student;
+select count(roll_no) from win.student;
+select distinct place from win.student;
+
+delete from win.student where s_no=3;
+update win.student set name="adc" where s_no=4;
+drop table win.student;
+select * from win.student where roll_no > 23;
+select * from win.student where roll_no < 12 and place="rasipuram";
+select * from win.student limit 3;
+select * from win.student WHERE name like "k%";
+select * from win.student WHERE name like "%k%";
+select * from win.student WHERE name like "k%R";
+select * from win.student WHERE name like "__R%";
+
